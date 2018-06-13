@@ -16,11 +16,12 @@ build:
   number: 0
   entry_points:
     - nodeenv = nodeenv:main
-  script: python setup.py install  --single-version-externally-managed --record=record.txt
+  script: python -m pip install . --no-deps --ignore-installed
   noarch: python
 
 requirements:
   build:
+    - pip
     - python
     - setuptools
   run:
