@@ -16,7 +16,7 @@ build:
   number: 0
   entry_points:
     - nodeenv = nodeenv:main
-  script: python -m pip install . --no-deps --ignore-installed
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   noarch: python
 
 requirements:
@@ -44,7 +44,7 @@ about:
   home: https://github.com/ekalinin/nodeenv
   license: BSD 3-Clause
   license_family: BSD
-  license_file: ''
+  license_file: LICENSE
   summary: Node.js virtual environment builder
 
 extra:
