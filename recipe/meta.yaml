@@ -24,6 +24,7 @@ requirements:
     - setuptools
   run:
     - python
+    - setuptools  # depends on pkg_resources at runtime
 
 test:
   commands:
@@ -31,7 +32,7 @@ test:
     # skip test_smoke because nodejs fails with:
     #   nodejs: /lib64/libc.so.6: version `GLIBC_2.16' not found (required by nodejs)
     # let's assume it's an issue with the docker image
-    - pytest tests -ra -k-test_smoke
+    - pytest tests -ra -k "not test_smoke"
   requires:
     - pytest
     - mock
