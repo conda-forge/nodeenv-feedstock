@@ -3,9 +3,9 @@ About nodeenv
 
 Home: https://github.com/ekalinin/nodeenv
 
-Package license: BSD 3-Clause
+Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Node.js virtual environment builder
 

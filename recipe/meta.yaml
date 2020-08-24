@@ -1,5 +1,5 @@
 {% set name = "nodeenv" %}
-{% set version = "1.4.0" %}
+{% set version = "1.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/ekalinin/nodeenv/archive/{{ version }}.tar.gz
-  sha256: dbe5f7e966c6130038aa1966e432ff67a9e99f8e489d5ea8849b02770096389d
+  sha256: c79669818bf010d8539cc9a53729b6be089bb482daac15bca2bf4196b2343284
 
 build:
   number: 0
@@ -24,6 +24,7 @@ requirements:
     - setuptools
   run:
     - python
+    - setuptools  # depends on pkg_resources at runtime
 
 test:
   commands:
@@ -31,7 +32,7 @@ test:
     # skip test_smoke because nodejs fails with:
     #   nodejs: /lib64/libc.so.6: version `GLIBC_2.16' not found (required by nodejs)
     # let's assume it's an issue with the docker image
-    - pytest tests -ra -k-test_smoke
+    - pytest tests -ra -k "not test_smoke"
   requires:
     - pytest
     - mock
