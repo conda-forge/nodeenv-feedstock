@@ -11,7 +11,7 @@ source:
   sha256: 0d8ba86a1e4ab68bb16e8f1a1ac4f6261288012c72d4fa4a697949535c2c8d04
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - nodeenv = nodeenv:main
   script: {{ PYTHON }} -m pip install . --no-deps -vv
@@ -20,10 +20,10 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools
   run:
-    - python 2.7|>=3.7
+    - python >={{ python_min }}
     - setuptools  # depends on pkg_resources at runtime
 
 test:
@@ -37,6 +37,7 @@ test:
     - pytest
     - mock
     - coverage
+    - python {{ python_min }}
   source_files:
     - tests
 
