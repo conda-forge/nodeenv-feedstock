@@ -1,5 +1,5 @@
 {% set name = "nodeenv" %}
-{% set version = "1.9.1" %}
+{% set version = "1.10.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,10 +8,10 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/ekalinin/nodeenv/archive/{{ version }}.tar.gz
-  sha256: 0d8ba86a1e4ab68bb16e8f1a1ac4f6261288012c72d4fa4a697949535c2c8d04
+  sha256: 5000579763a6e7f5e3d18ae8f69ae01b1b91ef2e4cb8b2d5d6a6f7f3e9a201b8
 
 build:
-  number: 1
+  number: 0
   entry_points:
     - nodeenv = nodeenv:main
   script: {{ PYTHON }} -m pip install . --no-deps -vv
