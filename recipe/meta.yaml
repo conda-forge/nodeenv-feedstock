@@ -1,5 +1,5 @@
 {% set name = "nodeenv" %}
-{% set version = "1.10.0" %}
+{% set version = "1.11.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/ekalinin/nodeenv/archive/{{ version }}.tar.gz
-  sha256: 5000579763a6e7f5e3d18ae8f69ae01b1b91ef2e4cb8b2d5d6a6f7f3e9a201b8
+  sha256: 5778cf62fe75dcfc32f096426b9554dadd590061c7fa47c2292fe23b8d35517e
 
 build:
   number: 0
